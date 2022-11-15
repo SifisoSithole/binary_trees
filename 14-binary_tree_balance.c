@@ -6,26 +6,16 @@
  *
  * Return: balance factor 
  */
-int binary_tree_balance(binary_tree_t *tree)
+int binary_tree_balance(const binary_tree_t *tree)
 {
-	binary_tree_t *c = tree;
 	int l = 0, r = 0;
 
 	if (!tree)
 		return (0);
 
-	while (c)
-	{
-		l++;
-		c = c->left;
-	}
-
-	c = tree;
-	while (c)
-	{
-		r++;
-		c = c->right;
-	}
+	l = tree->left ? 1 + binary_tree_balance(tree->left) : 0;
+	r = tree->right ? 1 + binary_tree_balance(tree->right) : 0;
 	return (l - r);
+	
 }
 
