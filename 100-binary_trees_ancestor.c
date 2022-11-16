@@ -17,7 +17,8 @@ size_t binary_tree_depths(const binary_tree_t *tree)
  *
  * Return: ...
  */
-binary_tree_t *binary_trees_ancestor(binary_tree_t *first, binary_tree_t *second)
+binary_tree_t *binary_trees_ancestor(binary_tree_t *first,
+		binary_tree_t *second)
 {
 	int f_height, s_height;
 	binary_tree_t *p1, *p2;
