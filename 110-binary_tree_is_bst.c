@@ -34,8 +34,10 @@ listint_t *add_nodeint(listint_t **head, const int n)
  * binary_tree_inorders - Goes through a binary tree using pre-order traversal
  * @tree: Pointer to the root node of the tree to traverse
  * @func: Pointer to a function to call for each node
+ * @h: ...
  */
-void binary_tree_inorders(const binary_tree_t *tree, listint_t **h, listint_t *(*func)(listint_t **head, const int))
+void binary_tree_inorders(const binary_tree_t *tree, listint_t **h,
+		listint_t *(*func)(listint_t **head, const int))
 {
 	if (tree && func)
 	{
@@ -71,6 +73,9 @@ int binary_tree_is_bst(const binary_tree_t *tree)
 {
 	listint_t *h = NULL, *p;
 	int high = 0;
+
+	if (!tree)
+		return (0);
 
 	binary_tree_inorders(tree, &h, &add_nodeint);
 	if (!h)
