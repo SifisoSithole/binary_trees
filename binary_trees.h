@@ -1,21 +1,7 @@
 #ifndef _BINARY_TREES_H_
 #define _BINARY_TREES_H_
 
-#include <stddef.h>
-/**
- * struct link_s - structure for advanced tasks
- *
- * @n: depth of node specified
- * @node: node of tree to store
- * @next: next node of the linked list
- */
-typedef struct link_s
-{
-	size_t n;
-	struct binary_tree_s const *node;
-	struct link_s *next;
-} link_t;
-
+#include <stdlib.h>
 /**
  * struct binary_tree_s - Binary tree node
  *
@@ -31,6 +17,20 @@ typedef struct binary_tree_s
 	struct binary_tree_s *left;
 	struct binary_tree_s *right;
 } binary_tree_t;
+
+/**
+ * struct listint_s - singly linked list
+ * @n: integer
+ * @next: points to the next node
+ *
+ * Description: singly linked list node structure
+ *
+ */
+typedef struct listint_s
+{
+	int n;
+	struct listint_s *next;
+} listint_t;
 
 void binary_tree_print(const binary_tree_t *);
 
@@ -81,5 +81,7 @@ int binary_tree_is_complete(binary_tree_t *tree);
 binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
 
 binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
+
+int binary_tree_is_bst(const binary_tree_t *tree);
 
 #endif /* _BINARY_TREES_H_ */
