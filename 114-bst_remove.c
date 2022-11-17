@@ -1,11 +1,16 @@
 #include "binary_trees.h"
-
-bst_t* minValueNode(bst_t* node)
+/**
+ * minValueNode - ...
+ * @node: ...
+ * Return: ..
+ */
+bst_t *minValueNode(bst_t *node)
 {
-	bst_t* current = node;
+	bst_t *current = node;
+
 	while (current->left)
 		current = current->left;
-	return current;
+	return (current);
 }
 
 /**
